@@ -1,3 +1,44 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:58d5390d93b99b215cecab1131c023190efb5c106cf4b2b79cf06ef1d222db52
-size 990
+{
+  "name": "aCode",
+  "version": "2.0.0",
+  "description": "aCode is a simple but intuitive code editor.",
+  "author": "Avery - avery@cgcristi.xyz",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "rebuild": "npx electron-rebuild"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.2.0",
+    "electron": "^25.0.0",
+    "electron-builder": "^24.13.3",
+    "discord-rpc": "^3.0.1"
+  },
+  "build": {
+    "appId": "com.avery.aCode",
+    "productName": "aCode",
+    "files": [
+      "index.html",
+      "main.js",
+      "node_modules/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "logo.ico"
+    },
+    "mac": {
+      "target": ["dmg", "zip"],
+      "icon": "logo.icns"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "logo.png"
+    }
+  },
+  "dependencies": {
+    "@babel/parser": "^7.25.3",
+    "discord-rpc": "^4.0.1",
+    "prettier": "^3.3.3"
+  }
+}
